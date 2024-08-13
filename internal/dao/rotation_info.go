@@ -8,19 +8,19 @@ import (
 	"gf-shop/internal/dao/internal"
 )
 
-// internalRotationDao is internal type for wrapping internal DAO implements.
-type internalRotationDao = *internal.RotationDao
+// internalRotationInfoDao is internal type for wrapping internal DAO implements.
+type internalRotationInfoDao = *internal.RotationInfoDao
 
-// rotationDao is the data access object for table rotation.
+// rotationInfoDao is the data access object for table rotation_info.
 // You can define custom methods on it to extend its functionality as you wish.
-type rotationDao struct {
-	internalRotationDao
+type rotationInfoDao struct {
+	internalRotationInfoDao
 }
 
 var (
-	// Rotation is globally public accessible object for table rotation operations.
-	Rotation = rotationDao{
-		internal.NewRotationDao(),
+	// RotationInfo is globally public accessible object for table rotation_info operations.
+	RotationInfo = rotationInfoDao{
+		internal.NewRotationInfoDao(),
 	}
 )
 

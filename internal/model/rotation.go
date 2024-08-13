@@ -1,11 +1,11 @@
 package model
 
-type RotationInput struct {
+type RotationInfoInput struct {
 	PicUrl string `json:"pic_url"`
 	Link   string `json:"link"`
 	Sort   uint   `json:"sort"`
 }
 
-type RotationOutput struct {
+type RotationInfoOutput struct {
 	Id uint `json:"id"`
 }

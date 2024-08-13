@@ -11,22 +11,23 @@ import (
 )
 
 type (
-	IRotation interface {
-		Create(ctx context.Context, in model.RotationInput) error
+	IRotationInfo interface {
+		Create(ctx context.Context, in model.RotationInfoInput) error
+		Delete(ctx context.Context, id uint) (err error)
 	}
 )
 
 var (
-	localRotation IRotation
+	localRotationInfo IRotationInfo
 )
 
-func Rotation() IRotation {
-	if localRotation == nil {
-		panic("implement not found for interface IRotation, forgot register?")
+func RotationInfo() IRotationInfo {
+	if localRotationInfo == nil {
+		panic("implement not found for interface IRotationInfo, forgot register?")
 	}
-	return localRotation
+	return localRotationInfo
 }
 
-func RegisterRotation(i IRotation) {
-	localRotation = i
+func RegisterRotationInfo(i IRotationInfo) {
+	localRotationInfo = i
 }

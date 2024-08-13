@@ -8,18 +8,18 @@ import (
 	"github.com/gogf/gf/v2/database/gdb"
 )
 
-type sRotation struct{}
+type sRotationInfo struct{}
 
 func init() {
-	service.RegisterRotation(New())
+	service.RegisterRotationInfo(New())
 }
 
-func (s *sRotation) Create(ctx context.Context, in model.RotationInput) error {
+func (s *sRotationInfo) Create(ctx context.Context, in model.RotationInfoInput) error {
 
-	return dao.Rotation.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
+	return dao.RotationInfo.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 
-		_, err := dao.Rotation.Ctx(ctx).Data(in).Insert()
-		
+		_, err := dao.RotationInfo.Ctx(ctx).Data(in).Insert()
+
 		if err != nil {
 			return err
 		}
@@ -29,6 +29,11 @@ func (s *sRotation) Create(ctx context.Context, in model.RotationInput) error {
 
 }
 
-func New() *sRotation {
-	return &sRotation{}
+func (s *sRotationInfo) Delete(ctx context.Context, id uint) (err error) {
+	_, err = dao.RotationInfo.Ctx(ctx).Where(dao.RotationInfo.Columns().Id, id).Delete()
+	return
+}
+
+func New() *sRotationInfo {
+	return &sRotationInfo{}
 }
