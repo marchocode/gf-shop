@@ -13,8 +13,9 @@ import (
 type Rotation struct {
 	g.Meta   `orm:"table:rotation, do:true"`
 	Id       interface{} // id
-	PicUrl   interface{} // url
-	Sort     interface{} // sort
+	PicUrl   interface{} //
+	Link     interface{} //
+	Sort     interface{} //
 	CreateAt *gtime.Time //
 	UpdateAt *gtime.Time //
 	DeleteAt *gtime.Time //

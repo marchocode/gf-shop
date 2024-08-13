@@ -21,8 +21,9 @@ type RotationDao struct {
 // RotationColumns defines and stores column names for table rotation.
 type RotationColumns struct {
 	Id       string // id
-	PicUrl   string // url
-	Sort     string // sort
+	PicUrl   string //
+	Link     string //
+	Sort     string //
 	CreateAt string //
 	UpdateAt string //
 	DeleteAt string //
@@ -32,6 +33,7 @@ type RotationColumns struct {
 var rotationColumns = RotationColumns{
 	Id:       "id",
 	PicUrl:   "pic_url",
+	Link:     "link",
 	Sort:     "sort",
 	CreateAt: "create_at",
 	UpdateAt: "update_at",

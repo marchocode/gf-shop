@@ -1,0 +1,9 @@
+# Rotation
+POST http://localhost:8080/backend/rotation
+Content-Type: application/json
+
+{
+    "pic_url": "https://baidu.com",
+    "link": "https://baidu.com",
+    "sort": 1
+}

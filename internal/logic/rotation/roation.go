@@ -19,6 +19,7 @@ func (s *sRotation) Create(ctx context.Context, in model.RotationInput) error {
 	return dao.Rotation.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 
 		_, err := dao.Rotation.Ctx(ctx).Data(in).Insert()
+		
 		if err != nil {
 			return err
 		}
