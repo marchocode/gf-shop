@@ -9,14 +9,24 @@ type RotationInfoReq struct {
 	Sort   uint   `json:"sort" v:"required"`
 }
 
+type RotationInfoRes struct {
+	Id uint `json:"id"`
+}
+
 type RotationInfoDelReq struct {
-	g.Meta `path:"/backend/rotation/{Id}" method:"delete" summary:"delete rotation" tags:"用户"`
+	g.Meta `path:"/backend/rotation/{Id}" method:"delete" summary:"delete rotation"`
 	Id     uint `json:"id" in:"path" dc:"id"`
 }
 
 type RotationInfoDelRes struct {
 }
 
-type RotationInfoRes struct {
-	Id uint `json:"id"`
+type RotationInfoUpdateReq struct {
+	g.Meta `path:"/backend/rotation/{Id}" method:"put" summary:"update rotation"`
+	Id     uint   `json:"id" in:"path" dc:"id"`
+	PicUrl string `json:"pic_url" v:"required"`
+	Link   string `json:"link" v:"required"`
+	Sort   uint   `json:"sort" v:"required"`
 }
+
+type RotationInfoUpdateRes struct{}

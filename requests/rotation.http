@@ -10,3 +10,13 @@ Content-Type: application/json
 
 ### Rotation Delete
 DELETE http://localhost:8080/backend/rotation/8
+
+### Rotation Delete
+PUT http://localhost:8080/backend/rotation/1
+Content-Type: application/json
+
+{
+  "pic_url": "https://www.google.com",
+  "link": "https://www.google.com",
+  "sort": 2
+}

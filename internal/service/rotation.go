@@ -12,8 +12,9 @@ import (
 
 type (
 	IRotationInfo interface {
-		Create(ctx context.Context, in model.RotationInfoInput) error
+		Create(ctx context.Context, in model.RotationInfoCreateInput) error
 		Delete(ctx context.Context, id uint) (err error)
+		Update(ctx context.Context, in model.RotationInfoUpdateInput) error
 	}
 )
 
