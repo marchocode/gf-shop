@@ -30,7 +30,8 @@ type RotationInfoListInput struct {
 }
 
 type RotationInfoListOutput struct {
-	List []RotationInfoListItem
+	List  []RotationInfoListItem
+	Total int
 }
 
 type RotationInfoListItem struct {

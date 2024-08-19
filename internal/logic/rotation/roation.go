@@ -4,7 +4,9 @@ import (
 	"context"
 	"gf-shop/internal/dao"
 	"gf-shop/internal/model"
+	"gf-shop/internal/model/entity"
 	"gf-shop/internal/service"
+
 	"github.com/gogf/gf/v2/database/gdb"
 )
 
@@ -43,20 +45,38 @@ func (s *sRotationInfo) Update(ctx context.Context, in model.RotationInfoUpdateI
 	return
 }
 
-
 func (s *sRotationInfo) List(ctx context.Context, in model.RotationInfoListInput) (out *model.RotationInfoListOutput, err error) {
 
 	var (
 		m = dao.RotationInfo.Ctx(ctx)
 	)
 
-	out = &model.RotationInfoListOutput{
-
-	}
+	out = &model.RotationInfoListOutput{}
 
 	listModel := m.Page(in.Page, in.Size)
-	listModel = listModel.OrderDesc()
-	
+	listModel = listModel.OrderDesc(dao.RotationInfo.Columns().Sort)
+
+	var list []entity.RotationInfo
+
+	if err = listModel.Scan(&list); err != nil {
+		return out, err
+	}
+
+	if len(list) == 0 {
+		return out, nil
+	}
+
+	out.Total, err = m.Count()
+
+	if err != nil {
+		return out, err
+	}
+
+	if err = listModel.Scan(&out.List); err != nil {
+		return out, err
+	}
+
+	return
 }
 
 func New() *sRotationInfo {

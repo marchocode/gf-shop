@@ -48,5 +48,22 @@ func (a *cRotation) Update(ctx context.Context, req *v1.RotationInfoUpdateReq) (
 
 // Get List
 func (a *cRotation) List(ctx context.Context, req *v1.RotationInfoListReq) (res *v1.RotationInfoListRes, err error) {
-	
+
+	list, err := service.RotationInfo().List(ctx, model.RotationInfoListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &v1.RotationInfoListRes{
+		List: list.List,
+		CommonPageRes: v1.CommonPageRes{
+			Total: list.Total,
+		},
+	}, nil
+
 }

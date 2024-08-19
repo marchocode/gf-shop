@@ -14,7 +14,8 @@ type (
 	IRotationInfo interface {
 		Create(ctx context.Context, in model.RotationInfoCreateInput) error
 		Delete(ctx context.Context, id uint) (err error)
-		Update(ctx context.Context, in model.RotationInfoUpdateInput) error
+		Update(ctx context.Context, in model.RotationInfoUpdateInput) (err error)
+		List(ctx context.Context, in model.RotationInfoListInput) (out *model.RotationInfoListOutput, err error)
 	}
 )
 

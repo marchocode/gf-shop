@@ -38,6 +38,6 @@ type RotationInfoListReq struct {
 }
 
 type RotationInfoListRes struct {
-	List interface{}
+	List interface{} `json:"list"`
+	CommonPageRes
 }
-
