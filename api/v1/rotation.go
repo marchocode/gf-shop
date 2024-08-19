@@ -30,3 +30,14 @@ type RotationInfoUpdateReq struct {
 }
 
 type RotationInfoUpdateRes struct{}
+
+type RotationInfoListReq struct {
+	g.Meta `path:"/backend/rotation" method:"get" summary:"get list"`
+	Sort   int `json:"sort" in:"query"`
+	CommonPageReq
+}
+
+type RotationInfoListRes struct {
+	List interface{}
+}
+

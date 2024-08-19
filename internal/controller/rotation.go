@@ -45,3 +45,8 @@ func (a *cRotation) Update(ctx context.Context, req *v1.RotationInfoUpdateReq) (
 
 	return
 }
+
+// Get List
+func (a *cRotation) List(ctx context.Context, req *v1.RotationInfoListReq) (res *v1.RotationInfoListRes, err error) {
+	
+}

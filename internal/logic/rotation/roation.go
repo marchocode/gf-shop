@@ -43,6 +43,22 @@ func (s *sRotationInfo) Update(ctx context.Context, in model.RotationInfoUpdateI
 	return
 }
 
+
+func (s *sRotationInfo) List(ctx context.Context, in model.RotationInfoListInput) (out *model.RotationInfoListOutput, err error) {
+
+	var (
+		m = dao.RotationInfo.Ctx(ctx)
+	)
+
+	out = &model.RotationInfoListOutput{
+
+	}
+
+	listModel := m.Page(in.Page, in.Size)
+	listModel = listModel.OrderDesc()
+	
+}
+
 func New() *sRotationInfo {
 	return &sRotationInfo{}
 }
