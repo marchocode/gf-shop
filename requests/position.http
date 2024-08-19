@@ -1,0 +1,11 @@
+### Create
+POST http://localhost:8080/backend/position
+Content-Type: application/json
+
+{
+  "picUrl": "https://baidu.com",
+  "goodsName": "测试商品",
+  "link": "https://baidu.com",
+  "sort": 0,
+  "goods_id": 1
+}
