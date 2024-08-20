@@ -13,6 +13,7 @@ import (
 type (
 	IPosition interface {
 		Create(ctx context.Context, in model.PositionInfoCreateInput) (*model.PositionInfoCreateOutput, error)
+		Update(ctx context.Context, in model.PositionInfoUpdateInput) (err error)
 	}
 )
 

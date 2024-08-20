@@ -11,7 +11,7 @@ database:
     ctxKeys: ["RequestId"]
 
   default:
-    link:   "mysql:root:root@tcp(mrcdev:3306)/test"
+    link:   "mysql:root:root@tcp(192.168.1.224:3306)/test"
     debug:  true
 
 logger:

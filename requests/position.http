@@ -9,3 +9,17 @@ Content-Type: application/json
   "sort": 0,
   "goods_id": 1
 }
+
+
+### update
+PUT http://localhost:8080/backend/position
+Content-Type: application/json
+
+{
+  "id": 3,
+  "picUrl": "https://baidu.com",
+  "goodsName": "测试商品2",
+  "link": "https://baidu.com",
+  "sort": 2,
+  "goods_id": 1
+}

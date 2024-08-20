@@ -6,6 +6,10 @@ package logic
 
 import (
 	_ "gf-shop/internal/logic/admin"
+	_ "gf-shop/internal/logic/auth"
+	_ "gf-shop/internal/logic/bizctx"
+	_ "gf-shop/internal/logic/middleware"
 	_ "gf-shop/internal/logic/position"
 	_ "gf-shop/internal/logic/rotation"
+	_ "gf-shop/internal/logic/session"
 )

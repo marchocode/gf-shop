@@ -31,3 +31,20 @@ func (a *cPosition) Create(ctx context.Context, req *v1.PositionInfoCreateReq) (
 		Id: output.Id,
 	}, nil
 }
+
+// Update Position
+func (a *cPosition) Update(ctx context.Context, req *v1.PositionInfoUpdateReq) (res *v1.PositionInfoUpdateRes, err error) {
+
+	err = service.Position().Update(ctx, model.PositionInfoUpdateInput{
+		Id: req.Id,
+		PositionCreateUpdateBase: model.PositionCreateUpdateBase{
+			PicUrl:    req.PicUrl,
+			GoodsName: req.GoodsName,
+			Link:      req.Link,
+			Sort:      req.Sort,
+			GoodsId:   req.GoodsId,
+		},
+	})
+
+	return
+}
