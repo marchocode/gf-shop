@@ -1,0 +1,9 @@
+POST http://localhost:8080/backend/admin
+Content-Type: application/json
+
+{
+  "name": "mrc",
+  "password": "123456",
+  "roleIds": "1",
+  "isAdmin": 0
+}

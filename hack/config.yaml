@@ -5,6 +5,6 @@ gfcli:
   gen:
     dao:
       - link: "mysql:root:root@tcp(mrcdev:3306)/test"
-        tables: 'position_info'
+        tables: 'admin_info'
         descriptionTag: true
         noModelComment: true

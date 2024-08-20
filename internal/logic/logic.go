@@ -5,6 +5,7 @@
 package logic
 
 import (
+	_ "gf-shop/internal/logic/admin"
 	_ "gf-shop/internal/logic/position"
 	_ "gf-shop/internal/logic/rotation"
 )
