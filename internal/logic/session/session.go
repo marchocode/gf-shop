@@ -25,7 +25,8 @@ func New() *sSession {
 func (s *sSession) SetUser(ctx context.Context, user *entity.AdminInfo) error {
 
 	gutil.Dump("user", user)
-	return service.BizCtx().Get(ctx).Session.Set(sessionKeyUser, user)
+	bizContext := service.BizCtx().Get(ctx)
+	return bizContext.Session.Set(sessionKeyUser, user)
 }
 
 func (*sSession) GetUser(ctx context.Context) *entity.AdminInfo {
@@ -41,7 +42,7 @@ func (*sSession) GetUser(ctx context.Context) *entity.AdminInfo {
 
 	if !v.IsNil() {
 		var user *entity.AdminInfo
-		_ = v.Struct(user)
+		_ = v.Struct(&user)
 		return user
 	}
 

@@ -1,3 +1,4 @@
+# @no-cookie-jar
 POST http://localhost:8080/backend/login
 Content-Type: application/json
 

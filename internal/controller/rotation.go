@@ -5,6 +5,7 @@ import (
 	v1 "gf-shop/api/v1"
 	"gf-shop/internal/model"
 	"gf-shop/internal/service"
+	"github.com/gogf/gf/v2/frame/g"
 )
 
 type cRotation struct{}
@@ -48,6 +49,9 @@ func (a *cRotation) Update(ctx context.Context, req *v1.RotationInfoUpdateReq) (
 
 // Get List
 func (a *cRotation) List(ctx context.Context, req *v1.RotationInfoListReq) (res *v1.RotationInfoListRes, err error) {
+
+	user := service.BizCtx().Get(ctx)
+	g.Dump(user)
 
 	list, err := service.RotationInfo().List(ctx, model.RotationInfoListInput{
 		Page: req.Page,

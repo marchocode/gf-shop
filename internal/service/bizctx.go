@@ -15,7 +15,7 @@ import (
 type (
 	IBizCtx interface {
 		// 初始化自定义上下文到 request.
-		Init(r *ghttp.Request, ctx model.Context)
+		Init(r *ghttp.Request, ctx *model.Context)
 		// 从上下文获得自定义上下文
 		Get(ctx context.Context) *model.Context
 		SetUser(ctx context.Context, ctxUser *model.ContextUser)

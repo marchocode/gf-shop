@@ -20,7 +20,7 @@ func New() *sBizCtx {
 }
 
 // 初始化自定义上下文到 request.
-func (s *sBizCtx) Init(r *ghttp.Request, ctx model.Context) {
+func (s *sBizCtx) Init(r *ghttp.Request, ctx *model.Context) {
 	r.SetCtxVar(consts.ContextKey, ctx)
 }
 

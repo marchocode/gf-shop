@@ -25,7 +25,7 @@ func (s *sMiddleWare) Ctx(r *ghttp.Request) {
 		Data:    make(g.Map),
 	}
 
-	service.BizCtx().Init(r, *customCtx)
+	service.BizCtx().Init(r, customCtx)
 
 	if user := service.Session().GetUser(r.Context()); user.Id > 0 {
 		customCtx.User = &model.ContextUser{
