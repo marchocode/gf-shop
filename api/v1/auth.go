@@ -1,6 +1,8 @@
 package v1
 
 import (
+	"time"
+
 	"github.com/gogf/gf/v2/frame/g"
 )
 
@@ -11,5 +13,6 @@ type AdminLoginReq struct {
 }
 
 type AdminLoginRes struct {
-	User interface{} `json:"user"`
+	Token  string
+	Expire time.Time
 }

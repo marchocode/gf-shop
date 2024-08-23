@@ -12,6 +12,7 @@ import (
 
 type (
 	IAuth interface {
+		LoginByNamePassword(ctx context.Context, in model.AdminLoginInput) (map[string]interface{}, error)
 		Login(ctx context.Context, in model.AdminLoginInput) error
 	}
 )

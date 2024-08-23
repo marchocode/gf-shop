@@ -12,4 +12,5 @@ import (
 	_ "gf-shop/internal/logic/position"
 	_ "gf-shop/internal/logic/rotation"
 	_ "gf-shop/internal/logic/session"
+	_ "gf-shop/internal/logic/token"
 )
