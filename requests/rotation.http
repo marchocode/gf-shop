@@ -22,5 +22,5 @@ Content-Type: application/json
 }
 
 ### GetPage
-GET http://localhost:8080/backend/rotation?page=1&size=10
-Cookie: gfsessionid=wnuar801fwdnr1d3lmxkv8lniw100axn
+GET http://localhost:8090/backend/rotation?page=1&size=10
+Authorization: Bearer Z+uDzSs1taMts+lOgsnJfopTqTHhvVPDPDqPYixcVaOO0zAu6afcpxDcoNJv9K6k

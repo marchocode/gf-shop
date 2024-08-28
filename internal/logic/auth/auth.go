@@ -2,7 +2,6 @@ package auth
 
 import (
 	"context"
-	"fmt"
 	"gf-shop/internal/dao"
 	"gf-shop/internal/model"
 	"gf-shop/internal/model/entity"
@@ -41,8 +40,6 @@ func (a *sAuth) LoginByNamePassword(ctx context.Context, in model.AdminLoginInpu
 
 	re["UserId"] = adminEntity.Id
 	re["UserName"] = adminEntity.Name
-
-	fmt.Println(re)
 
 	return re, nil
 }

@@ -21,4 +21,4 @@ Content-Type: application/json
 
 ### user info
 GET http://localhost:8090/backend/admin/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjE2LCJVc2VyTmFtZSI6Im1yYyIsImV4cCI6MTcyNDc3MDU1Njc5NSwib3JpZ19pYXQiOjE3MjQ3NzAyNTY3OTV9.r6p91mCIw9XlbgM4iDD4hjeNLilxrw-o47zQl1yY9Kc
+Authorization: Bearer 9PaGkdlSk9CcdbmtpEZ14UJThTUyDxFs9kDxNMOZtImEPpb62QhhErO7g/Q+x0zV

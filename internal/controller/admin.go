@@ -2,12 +2,9 @@ package controller
 
 import (
 	"context"
-	"fmt"
 	v1 "gf-shop/api/v1"
 	"gf-shop/internal/model"
 	"gf-shop/internal/service"
-
-	"github.com/gogf/gf/util/gconv"
 )
 
 type cAdmin struct{}
@@ -36,15 +33,9 @@ func (a *cAdmin) Create(ctx context.Context, req *v1.AdminInfoCreateReq) (*v1.Ad
 
 func (c *cAdmin) Info(ctx context.Context, req *v1.AdminGetInfoReq) (*v1.AdminGetInfoRes, error) {
 
-	auth := service.Token().GfJWTMiddleware()
+	user := ctx.Value("User")
 
-	res := &v1.AdminGetInfoRes{
-		Id:          gconv.Int(auth.GetIdentity(ctx)),
-		IdentityKey: auth.IdentityKey,
-		Payload:     auth.GetPayload(ctx),
-	}
-
-	fmt.Println(res)
-
-	return res, nil
+	return &v1.AdminGetInfoRes{
+		Info: user,
+	}, nil
 }
