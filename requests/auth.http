@@ -1,8 +1,24 @@
-# @no-cookie-jar
-POST http://localhost:8080/backend/login
+### login
+POST http://localhost:8090/backend/auth/login
 Content-Type: application/json
 
 {
   "name": "mrc",
   "password": "123456"
 }
+
+### re
+POST http://localhost:8090/backend/auth/refresh_token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjE2LCJVc2VyTmFtZSI6Im1yYyIsImV4cCI6MTcyNDc3MDIwNTIxMCwib3JpZ19pYXQiOjE3MjQ3Njk5MDUyMTB9.6NRi4cOH--PzCH29TboHHLUulHiKeXpQ1uTOPAIe94w
+Content-Type: application/json
+
+
+### logout
+POST http://localhost:8090/backend/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjE2LCJVc2VyTmFtZSI6Im1yYyIsImV4cCI6MTcyNDc2OTY2ODc1NCwib3JpZ19pYXQiOjE3MjQ3NjkzNjg3NTR9.SFfN6FVNxeDSQj7xatKFSjUW1FZEmh-q59ad093Zz2k
+Content-Type: application/json
+
+
+### user info
+GET http://localhost:8090/backend/admin/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjE2LCJVc2VyTmFtZSI6Im1yYyIsImV4cCI6MTcyNDc3MDU1Njc5NSwib3JpZ19pYXQiOjE3MjQ3NzAyNTY3OTV9.r6p91mCIw9XlbgM4iDD4hjeNLilxrw-o47zQl1yY9Kc

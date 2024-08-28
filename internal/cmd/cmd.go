@@ -29,10 +29,12 @@ var (
 			s.Group("/", func(group *ghttp.RouterGroup) {
 
 				group.Middleware(
+					ghttp.MiddlewareHandlerResponse,
 					service.Token().Auth,
 				)
 
 				group.Bind(
+					controller.Admin,
 					controller.Rotation,
 					controller.Position,
 				)

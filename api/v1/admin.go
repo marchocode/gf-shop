@@ -12,6 +12,16 @@ type AdminInfoCreateReq struct {
 	IsAdmin  int    `json:"isAdmin"      dc:"是否超级管理员"`
 }
 
+type AdminGetInfoReq struct {
+	g.Meta `path:"/backend/admin/info" method:"get"`
+}
+
+type AdminGetInfoRes struct {
+	Id          int    `json:"id"`
+	IdentityKey string `json:"identity_key"`
+	Payload     string `json:"payload"`
+}
+
 type AdminInfoCreateRes struct {
 	Id int `json:"id"`
 }

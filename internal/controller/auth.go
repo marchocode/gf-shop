@@ -8,9 +8,9 @@ import (
 
 type cAuth struct{}
 
-var Auth = cAdmin{}
+var Auth = cAuth{}
 
-func (a *cAdmin) Login(ctx context.Context, req *v1.AdminLoginReq) (*v1.AdminLoginRes, error) {
+func (a *cAuth) Login(ctx context.Context, req *v1.AdminLoginReq) (*v1.AdminLoginRes, error) {
 
 	token, expire := service.Token().GfJWTMiddleware().LoginHandler(ctx)
 
@@ -18,4 +18,15 @@ func (a *cAdmin) Login(ctx context.Context, req *v1.AdminLoginReq) (*v1.AdminLog
 		Token:  token,
 		Expire: expire,
 	}, nil
+}
+
+func (c *cAuth) RefreshToken(ctx context.Context, req *v1.AdminRefreshTokenReq) (res *v1.AdminRefreshTokenRes, err error) {
+	res = &v1.AdminRefreshTokenRes{}
+	res.Token, res.Expire = service.Token().GfJWTMiddleware().RefreshHandler(ctx)
+	return
+}
+
+func (c *cAuth) Logout(ctx context.Context, req *v1.AdminLogoutReq) (res *v1.AdminLogoutRes, err error) {
+	service.Token().GfJWTMiddleware().LogoutHandler(ctx)
+	return
 }
