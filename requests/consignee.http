@@ -1,0 +1,15 @@
+### CREATE
+POST http://localhost:8090/backend/consignee
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "isDefault": 1,
+  "name": "默认地址",
+  "phone": "手机号",
+  "province": "省份",
+  "city": "城市",
+  "town": "县区",
+  "street": "街道乡镇",
+  "detail": "地址详情"
+}

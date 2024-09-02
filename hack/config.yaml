@@ -4,7 +4,7 @@
 gfcli:
   gen:
     dao:
-      - link: "mysql:root:root@tcp(mrcdev:3306)/test"
-        tables: 'admin_info'
+      - link: "mysql:root:root@tcp(127.0.0.1:3306)/test"
+        tables: 'consignee_info'
         descriptionTag: true
         noModelComment: true

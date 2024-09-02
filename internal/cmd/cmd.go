@@ -35,6 +35,11 @@ var (
 					ghttp.MiddlewareHandlerResponse,
 				)
 
+				group.Bind(
+					controller.Order,
+					controller.Consignee,
+				)
+
 				group.ALL("/hello", func(r *ghttp.Request) {
 					r.Response.WriteJson(gtoken.Succ("hello"))
 				})
