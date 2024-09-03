@@ -23,5 +23,10 @@ logger:
   level : "all"
   stdout: true
 
+upload:
+  path: "temp/upload"
 
+qiniu:
+  ak: "xxxx"
+  sk: "xxxx"
 

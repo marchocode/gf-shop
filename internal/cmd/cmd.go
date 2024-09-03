@@ -38,6 +38,7 @@ var (
 				group.Bind(
 					controller.Order,
 					controller.Consignee,
+					controller.Upload,
 				)
 
 				group.ALL("/hello", func(r *ghttp.Request) {

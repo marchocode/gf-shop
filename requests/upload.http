@@ -1,0 +1,5 @@
+### Upload
+
+POST http://localhost:8090/backend/file/upload
+Content-Type: multipart/form-data
+

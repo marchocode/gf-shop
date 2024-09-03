@@ -12,6 +12,7 @@ import (
 	_ "gf-shop/internal/logic/middleware"
 	_ "gf-shop/internal/logic/order"
 	_ "gf-shop/internal/logic/position"
+	_ "gf-shop/internal/logic/qiniu"
 	_ "gf-shop/internal/logic/rotation"
 	_ "gf-shop/internal/logic/session"
 	_ "gf-shop/internal/logic/token"
