@@ -39,6 +39,7 @@ var (
 					controller.Order,
 					controller.Consignee,
 					controller.Upload,
+					controller.Admin,
 				)
 
 				group.ALL("/hello", func(r *ghttp.Request) {
@@ -68,7 +69,6 @@ var (
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 
 				group.Bind(
-					controller.Admin,
 					controller.Rotation,
 					controller.Position,
 				)

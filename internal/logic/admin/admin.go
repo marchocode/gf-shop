@@ -7,6 +7,7 @@ import (
 	"gf-shop/internal/service"
 	"gf-shop/utility"
 
+	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/util/grand"
 )
 
@@ -37,4 +38,11 @@ func (a *sAdmin) Create(ctx context.Context, in model.AdminInfoCreateInput) (*mo
 
 func New() *sAdmin {
 	return new(sAdmin)
+}
+
+func (a *sAdmin) AdminWithRoles(ctx context.Context, id int) (out *model.AdminInfoWithRolesOutput, err error) {
+
+	out = &model.AdminInfoWithRolesOutput{}
+	err = g.Model(model.AdminInfoWithRolesOutput{}).WithAll().WherePri(id).Scan(out)
+	return
 }

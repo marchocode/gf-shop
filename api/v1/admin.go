@@ -16,6 +16,11 @@ type AdminGetInfoReq struct {
 	g.Meta `path:"/backend/admin/info" method:"get"`
 }
 
+type AdminGetInfoIdReq struct {
+	g.Meta `path:"/backend/admin/info/{id}" method:"get"`
+	Id     int `json:"id" in:"path"`
+}
+
 type AdminGetInfoRes struct {
 	Id          int         `json:"id"`
 	IdentityKey string      `json:"identity_key"`

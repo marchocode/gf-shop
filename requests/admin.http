@@ -7,3 +7,6 @@ Content-Type: application/json
   "roleIds": "1",
   "isAdmin": 0
 }
+
+### get by id
+GET http://localhost:8090/backend/admin/info/13

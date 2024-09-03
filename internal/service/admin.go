@@ -13,6 +13,7 @@ import (
 type (
 	IAdmin interface {
 		Create(ctx context.Context, in model.AdminInfoCreateInput) (*model.AdminInfoCreateOutput, error)
+		AdminWithRoles(ctx context.Context, id int) (out *model.AdminInfoWithRolesOutput, err error)
 	}
 )
 

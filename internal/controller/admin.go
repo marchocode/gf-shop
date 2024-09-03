@@ -5,6 +5,8 @@ import (
 	v1 "gf-shop/api/v1"
 	"gf-shop/internal/model"
 	"gf-shop/internal/service"
+
+	"github.com/gogf/gf/v2/util/gutil"
 )
 
 type cAdmin struct{}
@@ -38,4 +40,12 @@ func (c *cAdmin) Info(ctx context.Context, req *v1.AdminGetInfoReq) (*v1.AdminGe
 	return &v1.AdminGetInfoRes{
 		Info: user,
 	}, nil
+}
+
+func (c *cAdmin) InfoWithRole(ctx context.Context, req *v1.AdminGetInfoIdReq) (res *v1.AdminGetInfoRes, err error) {
+
+	out, err := service.Admin().AdminWithRoles(ctx, req.Id)
+	gutil.Dump(out)
+
+	return
 }
